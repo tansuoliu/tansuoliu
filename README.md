@@ -1,19 +1,22 @@
 <情人节礼物>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>独一无二的情人节礼物</title>
+    <title>情人节礼物 - 刘宇航 ❤️ 李爽</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            background: url('https://i.imgur.com/6QZQZQZ.png') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            overflow: hidden;
         }
         .container {
             text-align: center;
@@ -23,6 +26,8 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             max-width: 400px;
             width: 100%;
+            position: relative;
+            z-index: 2;
         }
         h1 {
             color: #ff6f61;
@@ -79,10 +84,10 @@
 <body>
     <div class="container">
         <h1>💖 情人节快乐！ 💖</h1>
-        <p>请输入你们的名字，生成独一无二的祝福：</p>
-        <input type="text" id="loverName" placeholder="你爱人的名字">
+        <p>请输入你们的名字：</p>
+        <input type="text" id="loverName" placeholder="爱人的名字">
         <input type="text" id="yourName" placeholder="你的名字">
-        <button onclick="generateMessage()">生成祝福</button>
+        <button onclick="checkNames()">生成祝福</button>
         <div id="message" class="message"></div>
     </div>
 
@@ -90,23 +95,23 @@
     <div id="hearts"></div>
 
     <script>
-        function generateMessage() {
+        function checkNames() {
             const loverName = document.getElementById('loverName').value;
             const yourName = document.getElementById('yourName').value;
             const messageDiv = document.getElementById('message');
 
-            if (!loverName || !yourName) {
-                alert('请输入完整的名字哦！');
+            if (loverName !== '李爽' || yourName !== '刘宇航') {
+                alert('请输入正确的名字哦！');
                 return;
             }
 
             const messages = [
-                `亲爱的${loverName}，`,
-                `在这个特别的日子里，我想对你说：`,
-                `你是我生命中最美好的存在，`,
+                `亲爱的李爽，`,
+                `从2023年3月9号相识相知相爱至今，`,
                 `每一天与你在一起都是幸福的时光。`,
+                `你是我生命中最美好的存在，`,
                 `无论未来如何，我都会一直爱你、珍惜你。`,
-                `爱你的，${yourName} 💕`
+                `爱你的，刘宇航 💕`
             ];
 
             messageDiv.innerHTML = messages.join('<br>');
@@ -115,7 +120,7 @@
         // 动态生成爱心
         function createHearts() {
             const heartsContainer = document.getElementById('hearts');
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 50; i++) {
                 const heart = document.createElement('div');
                 heart.className = 'heart';
                 heart.innerHTML = '❤️';
